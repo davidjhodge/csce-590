@@ -1,0 +1,41 @@
+<ion-view view-title="Setup" ng-init="init()">
+  <ion-content class="padding">
+    <br><br>
+     <h1>Register
+     
+     </h1>
+    <div class="list list-inset">
+<!--       <label class="item item-input">
+        <input ng-model="firstname" type="text" placeholder="First Name">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Last Name">
+      </label>
+       -->
+
+      <label class="item item-input">
+        <input 　type="$parent.email" placeholder="Email" ng-model="email">
+      </label>
+<!--       <label class="item item-input">
+        <input ng-model="$parent.phone"　type="number" placeholder="Phone">
+      </label> -->
+
+      <label class="item item-input">
+        <input ng-model="$parent.password"　type="password" placeholder="Login Password">
+      </label>
+
+
+
+    </div>
+    <button class="button button-full button-positive"
+      ng-click="Register()">
+      Register
+    </button>
+
+    <button class="button button-full button-positive" ng-click="cancel()">
+      Cancel
+    </button>
+
+
+  </ion-content>
+</ion-view>

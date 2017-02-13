@@ -1,0 +1,160 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Helvetica-Neue', sans-serif;
+}
+
+.nav-container {
+  height: 48px;
+  padding-top: 8px;
+  display: flex;
+  background-color: rgba(245, 245, 245, 1);
+}
+
+.q2-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#add-button {
+  padding: 4px;
+  float: left;
+  display: flex;
+  align-items: center;
+}
+
+#add-button:active {
+  background-color: rgba(245, 245, 245, 0.75);
+}
+
+#delete-button {
+  padding: 4px;
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+#delete-button:active {
+  background-color: rgba(245, 245, 245, 0.75);
+}
+
+.button-title {
+  font-size: 16px;
+  margin: auto;
+
+  float: left;
+}
+
+.button-image {
+  background-size: contain;
+  height: 24px;
+  width: 24px;
+  margin: auto;
+  float: left;
+  margin-right: 4px;
+}
+
+.nav-title-container {
+  height: 48px;
+  /*width: 50%;*/
+  margin: auto;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#nav-title {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#icon-button {
+  border-radius: 4px;
+  height: 32px;
+  width: 32px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.button-icon-image {
+  height: 24px;
+  width: 24px;
+}
+
+ul.horizontal-list {
+  list-style: none;
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 32px;
+}
+
+ul.horizontal-list li {
+  float: left;
+  margin-right: 4px;
+}
+
+ul#class-list {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+ul#class-list li {
+  display: block;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  height: 32px;
+  background-color: rgba(245,245,245,1);
+  line-height: 36px;
+  border-top: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-bottom: 1px;
+  border-color: rgb(150, 150, 150);
+}
+
+ul#tab-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 64px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(245,245,245,1);
+  border-top: 1px;
+  border-top-style: solid;
+  border-color: rgb(200, 200, 200);
+}
+
+ul#tab-bar li {
+ width: calc(100%/6);
+ display: block;
+ height: 64px;
+ float: left;
+}
+
+.tab-icon {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  height: 40px;
+  width: 40px;
+  display: block;
+  margin: auto;
+}
+
+.tab-title {
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 12px;
+}

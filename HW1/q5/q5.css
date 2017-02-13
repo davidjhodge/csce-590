@@ -1,0 +1,201 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Helvetica-Neue', sans-serif;
+}
+
+/* Parent Containers*/
+.nav-container {
+  height: 100px;
+  display: flex;
+  background-color: rgba(245, 245, 245, 1);
+}
+
+.q5-container {
+  width: 100%;
+  height: auto;
+  min-height: calc(100% - 100px);
+  padding: 0;
+  margin: 0;
+  background-color: rgb(235,235,235);
+  background-image: url("images/large-doctor-image.jpg");
+  background-size: cover;
+}
+
+/* Navigation */
+.button-title {
+  font-size: 16px;
+  margin: auto;
+  float: left;
+}
+
+.button-image {
+  background-size: contain;
+  height: 24px;
+  width: 24px;
+  margin: auto;
+  float: left;
+  margin-right: 4px;
+}
+
+.nav-title-container {
+  height: 48px;
+  width: 120px;
+  padding-top: 8px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#nav-title {
+  font-size: 20px;
+  padding-left: 16px;
+  text-align: center;
+}
+
+ul#nav-items {
+  padding: 0;
+  margin: 0;
+}
+
+ul#nav-items li {
+ width: 80px;
+ display: block;
+ height: 64px;
+ float: left;
+ list-style: none;
+}
+
+button#nav-button {
+  height: 64px;
+  width: 80px;
+}
+
+div.top-icon-container {
+  height: 32px;
+  width: 32px;
+  float: left;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: flex;
+  align-items: center;
+}
+
+img.nav-item-icon {
+  max-width: 32px;
+  max-height: 32px;
+  background-size: contain;
+  display: block;
+  margin: auto;
+}
+
+.nav-item-title {
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Page Contents */
+div.nav-items {
+  margin: auto;
+  width: 120px;
+}
+
+.tab-button {
+  float: left;
+  display: flex;
+  align-items: center;
+  outline: none;
+  border-style: none;
+}
+
+.tab-button:active {
+  background-color: rgba(245, 245, 245, 0.75);
+}
+
+.tab-button-title {
+  font-size: 12px;
+  margin-left: 0px;
+  float: left;
+  color: #ffffff;
+}
+
+.tab-button-image {
+  background-size: contain;
+  height: 24px;
+  width: 24px;
+  margin-left: 4px;
+  float: left;
+  margin-right: 4px;
+}
+
+img#profile-picture {
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin: 12px;
+  float: left;
+}
+
+span#doctor-name {
+  float: left;
+  margin-left: 8px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+div#bottom-buttons {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+button.bottom-button {
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  border-style: none;
+  background-color: rgb(0,234,193);
+}
+
+ul#button-list {
+  list-style: none;
+  padding-left: 8px;
+  margin-bottom: 12px;
+  height: 56px;
+}
+
+ul#button-list > li {
+  float: left;
+  margin-right: 12px;
+}
+
+img.bottom-button-img {
+  height: 32px;
+  width: 32px;
+  margin: auto;
+}
+
+div#bottom-right-view {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  width: 90px;
+  border: 1px;
+  border-color: white;
+  border-style: solid;
+}
+
+img.bottom-right-image {
+  width: 90px;
+  height: 120px;
+  background-size: cover;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="q1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <body>
+    <div class="nav-container">
+      <button type="submit" id="back-button">
+        <img src="images/back-chevron.png" class="button-image"> </img>
+      </button>
+      <div class="nav-title-container">
+        <span id="nav-title">Add Homework</span>
+      </div>
+      <button type="submit" id="add-button">
+        <img src="images/plus-button.png" class="button-image"> </img>
+      </button>
+    </div>
+    <div class="q1-container">
+      <select id="dropdown">
+        <option class="dropdown-option" value="CSCE-590">CSCE 590</option>
+        <option class="dropdown-option" value="CSCE-069">CSCE-069</option>
+      </select>
+      <input id="homework-name" type="text" placeholder="Homework name">
+      <span class="full-width-label">Due datetime</span>
+      <input id="date-picker" type="date">
+      <span class="full-width-label">Set Priority</span>
+      <div>
+        <input id="slider" type="range">
+      </div>
+      <span>Pick Calender color</span>
+      <input id="color-picker" type="color">
+      <span class="full-width-label">Description</span>
+      <textarea id="description-text"></textarea>
+    </div>
+  </body>
+</html>

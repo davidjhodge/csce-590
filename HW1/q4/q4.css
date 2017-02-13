@@ -1,0 +1,273 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Helvetica-Neue', sans-serif;
+}
+
+/* Parent Containers*/
+.nav-container {
+  height: 64px;
+  display: flex;
+  background-color: rgba(245, 245, 245, 1);
+}
+
+.q4-container {
+  width: 100%;
+  height: auto;
+  min-height: calc(100% - 64px);
+  padding: 0;
+  margin: 0;
+  background-color: rgb(235,235,235);
+}
+
+/* Navigation */
+#delete-button {
+  padding: 4px;
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+#delete-button:active {
+  background-color: rgba(245, 245, 245, 0.75);
+}
+
+.button-title {
+  font-size: 16px;
+  margin: auto;
+  float: left;
+}
+
+.button-image {
+  background-size: contain;
+  height: 24px;
+  width: 24px;
+  margin: auto;
+  float: left;
+  margin-right: 4px;
+}
+
+.nav-title-container {
+  height: 48px;
+  width: 120px;
+  padding-top: 8px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#nav-title {
+  font-size: 20px;
+  padding-left: 16px;
+  text-align: center;
+}
+
+ul#nav-items {
+  padding: 0;
+  margin: 0;
+}
+
+ul#nav-items li {
+ width: 80px;
+ display: block;
+ height: 64px;
+ float: left;
+ list-style: none;
+}
+
+button#nav-button {
+  height: 64px;
+  width: 80px;
+}
+
+img.nav-item-icon {
+  height: 32px;
+  width: 32px;
+  display: block;
+  margin: auto;
+  margin-bottom: 4px;
+}
+
+.nav-item-title {
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Page Contents */
+img#header-image {
+  background-size: cover;
+  width: 100%;
+  height: 30%;
+}
+
+div#header-tab-container {
+  width: 100%;
+  height: 48px;
+  margin-top: 0;
+}
+
+a#header-tab {
+  background-color: rgb(0,234,193);
+  width: calc(25%);
+  height: 48px;
+}
+
+a#header-tab:active {
+  background-color: rgb(0,209,172)
+}
+
+.tab-button {
+  float: left;
+  display: flex;
+  align-items: center;
+  outline: none;
+  border-style: none;
+}
+
+.tab-button:active {
+  background-color: rgba(245, 245, 245, 0.75);
+}
+
+.tab-button-title {
+  font-size: 12px;
+  margin-left: 0px;
+  float: left;
+  color: #ffffff;
+}
+
+.tab-button-image {
+  background-size: contain;
+  height: 24px;
+  width: 24px;
+  margin-left: 4px;
+  float: left;
+  margin-right: 4px;
+}
+
+div#left-column {
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin-left: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 4px;
+  width: calc(50% - 12px);
+  height: 200px;
+  float: left;
+}
+
+div#right-column {
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin-left: 4px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  width: calc(50% - 12px);
+  height: 200px;
+  float: left;
+}
+
+ul#checklist {
+  padding-left: 32px;
+  padding-right: 16px;
+}
+
+ul#checklist li {
+  margin-bottom: 16px;
+}
+
+div#profile-summary {
+  width: 100%;
+  background-color: #ffffff;
+  height: 268px;
+}
+
+div#center-content {
+  width: 130px;
+  margin: auto;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img#profile-picture {
+  background-size: contain;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+#right-cta {
+  background-color: rgb(0,234,193);
+  color: #ffffff;
+  border-radius: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 100px;
+  border-style: none;
+  margin-top: 8px;
+  height: 32px;
+  font-size: 16px;
+  position: absolute;
+  right: 20px;
+  top: calc(64px + 40px);
+}
+
+span#profile-name {
+  font-weight: bold;
+  white-space: pre;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+span#profile-job {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+span#profile-location {
+  color: rgb(200,200,200);
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+div.rating span {
+  color: #FF8500;
+}
+
+div#video-container {
+  /*display: block;*/
+  width: 100%;
+}
+
+iframe#video {
+  height: 100px;
+  display: block;
+  margin: auto;
+  padding-top: 16px;
+}
+
+span.block-text {
+  display: block;
+  margin: auto;
+}
+
+#map {
+  width: 142.22px;
+  height: 100px;
+  background-color: grey;
+  margin: auto;
+  margin-top: 16px;
+}

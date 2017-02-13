@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="q4.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="nav-container">
+      <div class="nav-title-container">
+        <span id="nav-title">HealthTap</span>
+      </div>
+      <ul id="nav-items">
+        <li>
+          <button type="submit" id="nav-button">
+            <img src="images/feed.png" class="nav-item-icon"> </img>
+            <span class="nav-item-title">Feed</span>
+          </button>
+        </li>
+        <li>
+          <button type="submit" id="nav-button">
+            <img src="images/search.png" class="nav-item-icon"> </img>
+            <span class="nav-item-title">Search</span>
+          </button>
+        </li>
+        <li>
+          <button type="submit" id="nav-button">
+            <img src="images/doctor-black.png" class="nav-item-icon"> </img>
+            <span class="nav-item-title">Ask Docs</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="q4-container">
+      <div id="profile-summary">
+        <div id="center-content">
+          <img src="images/profile-picture.jpg" id="profile-picture">
+          <span id="profile-name">Dr. Robert Kwok</span>
+          <span id="profile-job">Pediatrics, Board Certified</span>
+          <span id="profile-location">Palo Alto, CA</span>
+          <div class="rating">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+          </div>
+        </div>
+        <button id="right-cta">Ask Now</button>
+      </div>
+      <div id="header-tab-container">
+        <a class="tab-button" id="header-tab">
+          <img src="images/doctor.png" class="tab-button-image"> </img>
+          <span class="tab-button-title">About</span>
+        </a>
+        <a class="tab-button" id="header-tab">
+          <img src="images/chat-white.png" class="tab-button-image"> </img>
+          <span class="tab-button-title">Feed</span>
+        </button>
+        <a class="tab-button" id="header-tab">
+          <img src="images/group.png" class="tab-button-image"> </img>
+          <span class="tab-button-title">Network</span>
+        </a>
+        <a class="tab-button" id="header-tab">
+          <img src="images/checkmark.png" class="tab-button-image"> </img>
+          <span class="tab-button-title">Checklists</span>
+        </a>
+      </div>
+      <div id="left-column">
+        <div id="video-container">
+          <iframe
+            id="video"
+            width="142.222222"
+            height="80"
+            src="https://www.youtube.com/embed/0PVRgNkP0g8"
+            frameborder="0"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+      <div id="right-column">
+        <div id="map"></div>
+        <script>
+          function initMap() {
+            var uluru = {lat: -25.363, lng: 131.044};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 4,
+              center: uluru
+            });
+            var marker = new google.maps.Marker({
+              position: uluru,
+              map: map
+            });
+          }
+        </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCD5M2qiHWoi5eA2UVrgmcRipZGK8hxGU&callback=initMap">
+      </script>
+      </div>
+    </div>
+  </body>
+</html>
