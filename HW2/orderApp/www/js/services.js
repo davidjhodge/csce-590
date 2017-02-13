@@ -1,5 +1,46 @@
 angular.module('starter.services', [])
 
+.factory('Orders', function() {
+  // Put dummy orders here
+  var orders = [];
+
+  var storedOrders = JSON.parse(localStorage.getItem("orders"));
+  if (storedOrders && storedOrders.length > 0) {
+    orders = storedOrders;
+    console.log(storedOrders.length + " orders found in storage.")
+  }
+
+
+  function saveOrders() {
+    localStorage.setItem("orders", JSON.stringify(orders))
+  }
+
+  return {
+    all: function() {
+      if (orders.length > 0) {
+        return orders;
+      }
+      return [];
+    },
+    create: function(order) {
+      orders.push(order);
+      saveOrders();
+    },
+    remove: function(order) {
+      orders.splice(orders.indexOf(order), 1);
+      saveOrders();
+    },
+    get: function(orderId) {
+      for (var i = 0; i < orders.length; i++) {
+        if (orders[i].id === orderId) {
+          return orders[i];
+        }
+      }
+      return null;
+    }
+  };
+})
+
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 

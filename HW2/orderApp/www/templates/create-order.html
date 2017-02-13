@@ -1,0 +1,32 @@
+<ion-modal-view view-title="New Order">
+  <ion-nav-bar>
+    <ion-nav-buttons side="left">
+      <button class="button" ng-click="cancelNewOrder()">
+        Cancel
+      </button>
+    </ion-nav-buttons>
+    <p>Create Order</p>
+  </ion-nav-bar>
+  <ion-content style="margin-top:45px;">
+    <label class="item item-input">
+      <input ng-model="product.name" type="text" placeholder="Product Name">
+    </label>
+    <label class="item item-input">
+      <input ng-model="product.quantity" type="number" placeholder="Quantity">
+    </label>
+    <label class="item item-input">
+      <input ng-model="product.price" type="number" min="0.01" step="0.01" max="100000" placeholder="Price (20.00)"/>
+    </label>
+    <label class="item item-input" style="height:47px;">
+      <select ng-model="product.category">
+        <option value="" disabled selected>Select a category</option>
+        <option value="food">Food</option>
+        <option value="stationary">Stationary</option>
+        <option value="clothing">Clothing</option>
+      </select>
+    </label>
+    <button class="button button-block button-positive" ng-click="submitOrder(product)">
+      Submit
+    </button>
+   </ion-content>
+</ion-modal-view>
