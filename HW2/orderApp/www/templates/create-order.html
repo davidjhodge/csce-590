@@ -1,13 +1,15 @@
 <ion-modal-view view-title="New Order">
-  <ion-nav-bar>
+  <ion-nav-bar class="bar-stable">
     <ion-nav-buttons side="left">
       <button class="button" ng-click="cancelNewOrder()">
         Cancel
       </button>
     </ion-nav-buttons>
-    <p>Create Order</p>
+    <ion-nav-title>
+      <p>Create Order</p>
+    </ion-nav-title>
   </ion-nav-bar>
-  <ion-content style="margin-top:45px;">
+  <ion-content style="margin-top:44px;">
     <label class="item item-input">
       <input ng-model="product.name" type="text" placeholder="Product Name">
     </label>

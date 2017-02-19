@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ui.router'])
+angular.module('starter', ['ionic', 'ui.router', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -38,6 +38,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     controller: 'LoginCtrl'
   })
 
+  // Create Account state
+  .state('signup', {
+    url: '/signup',
+    templateUrl: 'templates/signup.html',
+    controller: 'LoginCtrl'
+  })
+
   // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
@@ -59,14 +66,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
   // Order detail
-  .state('tab.orders.order-detail', {
-    url: '/:orderId',
-    views: {
-      'order-detail': {
-        templateUrl: 'templates/order-detail.html',
-        controller: 'OrderDetailCtrl'
-      }
-    }
+  .state('order-detail', {
+    url: '/tab/orders/:orderId',
+    params: {
+      orderId: null
+    },
+    templateUrl: 'templates/order-detail.html',
+    controller: 'OrderDetailCtrl'
+    // views: {
+    //   'order-detail': {
+    //     templateUrl: 'templates/order-detail.html',
+    //     controller: 'OrderDetailCtrl'
+    //   }
+    // }
   })
 
   .state('tab.chats', {

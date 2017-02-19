@@ -1,7 +1,18 @@
-<ion-view view-title="{{order.name}}">
+<ion-view>
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-buttons side="left">
+      <button class="button button-clear" ng-click="goBack()" >
+      <i class="icon ion-ios-arrow-back"></i>
+      Back</button>
+  </ion-nav-buttons>
+    <ion-nav-title>
+      <p ng-bind="order.name"></p>
+    </ion-nav-title>
+  </ion-nav-bar>
   <ion-content class="padding">
-    <p>
-      {{order.orderId}}
-    </p>
+    <h2>{{order.name}} ({{order.category}})</h2>
+    <p>Quantity: {{order.quantity}}</p>
+    <p>${{order.price}}</p>
+    <p>{{order.id}}</p>
   </ion-content>
 </ion-view>
