@@ -27,6 +27,9 @@
         <option value="clothing">Clothing</option>
       </select>
     </label>
+    <label class="item item-input">
+      <input ng-model="product.orderDate" type="datetime-local" />
+    </label>
     <button class="button button-block button-positive" ng-click="submitOrder(product)">
       Submit
     </button>

@@ -87,7 +87,8 @@ angular.module('starter.controllers', [])
             productQuantity: orders[i].get("productQuantity"),
             productName: orders[i].get("productName"),
             productPrice: orders[i].get("productPrice"),
-            productCategory: orders[i].get("productCategory")
+            productCategory: orders[i].get("productCategory"),
+            orderDate: orders[i].get("orderDate").toString()
           });
         }
 
@@ -125,7 +126,7 @@ angular.module('starter.controllers', [])
     var quantity = product.quantity;
     var price = product.price;
     var category = product.category;
-    var date = Date.now();
+    var date = product.orderDate;
 
     var Order = Parse.Object.extend("Order");
     var m = new Order();
@@ -135,6 +136,7 @@ angular.module('starter.controllers', [])
     m.set("productQuantity", quantity);
     m.set("productPrice", price);
     m.set("productCategory", category);
+    m.set("orderDate", date);
     // Order date is the createdAt field
     // objectId is created by default
     m.save().then(function(o) {
@@ -153,6 +155,7 @@ angular.module('starter.controllers', [])
         // The object was retrieved successfully.
         storedOrder.destroy({});
         $scope.getOrders();
+        $scope.$apply();
       },
       error: function(object, error) {
         // The object was not retrieved successfully.
@@ -177,7 +180,8 @@ angular.module('starter.controllers', [])
         productQuantity: storedOrder.get("productQuantity"),
         productName: storedOrder.get("productName"),
         productPrice: storedOrder.get("productPrice"),
-        productCategory: storedOrder.get("productCategory")
+        productCategory: storedOrder.get("productCategory"),
+        orderDate: storedOrder.get("orderDate").toString()
       };
       $scope.$apply();
       console.log("Located order " + storedOrder.id) + ".";
