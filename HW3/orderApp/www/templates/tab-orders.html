@@ -1,0 +1,24 @@
+<ion-view view-title="Orders">
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-buttons side="right">
+      <button class="button" ng-click="createNewOrder()">
+        New Order
+      </button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate"
+        ng-repeat="order in orders | orderBy:'orderedAt' track by $index"
+        type="item-text-wrap"
+        ng-click="viewOrder(order.id)">
+        <h2>{{order.productName}} ({{order.productCategory}})</h2>
+        <p>Quantity: {{order.productQuantity}}</p>
+        <p>${{order.productPrice}}</p>
+        <ion-option-button class="button-assertive" ng-click="remove(order)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
