@@ -2,7 +2,7 @@
 
 angular.module('starter.controllers', [])
 
-.controller('LoginCtrl', function($scope, $ionicModal, $state, Users) {
+.controller('LoginCtrl', function($scope, $ionicModal, $state) {
   var self = this;
 
   // Routing
@@ -31,7 +31,7 @@ angular.module('starter.controllers', [])
           $state.go("tab.orders");
         },
         error:function(user,error) {
-          alert("Login Error: " + error);
+          alert("Login Error: " + error.message);
         }
       });
     }
