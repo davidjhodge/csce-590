@@ -2,7 +2,7 @@
 
 angular.module('starter.controllers', [])
 
-.controller('LoginCtrl', function($scope, $ionicModal, $state) {
+.controller('LoginCtrl', function($scope, $ionicModal, $state, OpenFB) {
   var self = this;
 
   // Routing
@@ -64,6 +64,34 @@ angular.module('starter.controllers', [])
         }
       });
     }
+  }
+
+  $scope.facebookSignIn = function() {
+
+    OpenFB.login('public_profile,email').then(
+      function(result) {
+        console.log("Access Token Retreived from Facebook!");
+
+        // Create User with fbToken
+        var fbToken = window.sessionStorage.fbtoken;
+
+        Parse.FacebookUtils.logIn(null, {
+          success: function(user) {
+            if (!user.existed()) {
+              console.log("User signed up and logged in through Facebook!");
+            } else {
+              console.log("User logged in through Facebook!");
+            }
+          },
+          error: function(user, error) {
+            console.log("User cancelled the Facebook login or did not fully authorize.");
+          }
+        });
+
+      }, function() {
+        alert("Failed to retrieve Facebook access token.");
+      }
+    );
   }
 })
 

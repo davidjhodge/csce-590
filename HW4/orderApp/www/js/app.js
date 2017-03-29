@@ -5,9 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ui.router', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'ui.router', 'starter.controllers', 'starter.services', 'openfb'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, OpenFB) {
   $ionicPlatform.ready(function() {
 
     appid = 'EXWkCHVJeyBIUuKU1BPPXhTTQZPHIRLLFcdITXgs';
@@ -15,6 +15,31 @@ angular.module('starter', ['ionic', 'ui.router', 'starter.controllers', 'starter
     Parse.initialize(appid, jskey);
     Parse.serverURL = 'https://parseapi.back4app.com';
     console.log("Connecting to database...");
+
+    // OpenFb
+    OpenFB.init('140023119858029', 'http://172.16.26.50:8100/oauthcallback.html');
+
+    // Parse FacebookUtils
+    window.fbAsyncInit = function() {
+      Parse.FacebookUtils.init({ // this line replaces FB.init({
+        appId      : '140023119858029', // Facebook App ID
+        status     : true,  // check Facebook Login status
+        cookie     : true,
+        xfbml      : true,  // initialize Facebook social plugins on the page
+        version    : 'v2.2' // point to the latest Facebook Graph API version
+      });
+
+      // Run code after the Facebook SDK is loaded.
+      console.log("Parse.FacebookUtils initialized!")
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

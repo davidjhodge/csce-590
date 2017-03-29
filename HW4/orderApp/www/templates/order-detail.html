@@ -10,9 +10,9 @@
     </ion-nav-title>
   </ion-nav-bar>
   <ion-content class="padding">
-    <div>
+    <div style="height: 100px; width: 100px;">
       <img ng-src="{{order.productImage._url}}"
-        style="height: 100px; width: 100px;">
+        style="max-height: 100%; max-width: 100%;">
     </div>
     <h2>{{order.productName}} ({{order.productCategory}})</h2>
     <p>Quantity: {{order.productQuantity}}</p>

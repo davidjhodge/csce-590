@@ -12,8 +12,10 @@
         ng-repeat="order in orders | orderBy:'orderedAt' track by $index"
         type="item-text-wrap"
         ng-click="viewOrder(order.id)">
-        <img ng-src="{{order.productImage._url}}"
-          style="float: left; margin-right: 24px; height: 100px; width: 100px;">
+        <div style="float: left; margin-right: 24px; height: 100px; width: 100px;">
+          <img ng-src="{{order.productImage._url}}"
+            style="max-height: 100%; max-width: 100%; margin: auto; display: block;">
+        </div>
         <div style="margin-top:8px;">
           <h2>{{order.productName}} ({{order.productCategory}})</h2>
           <p>Quantity: {{order.productQuantity}}</p>
