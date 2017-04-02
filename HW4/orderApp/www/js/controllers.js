@@ -66,6 +66,21 @@ angular.module('starter.controllers', [])
     }
   }
 
+  // $scope.facebookSignIn = function() {
+  //   Parse.FacebookUtils.logIn(null, {
+  //     success: function(user) {
+  //       if (!user.existed()) {
+  //         alert("User signed up and logged in through Facebook!");
+  //       } else {
+  //         alert("User logged in through Facebook!");
+  //       }
+  //     },
+  //     error: function(user, error) {
+  //       alert("User cancelled the Facebook login or did not fully authorize.");
+  //     }
+  //   });
+  // }
+//
   $scope.facebookSignIn = function() {
 
     OpenFB.login('public_profile,email').then(
@@ -75,24 +90,26 @@ angular.module('starter.controllers', [])
         // Create User with fbToken
         var fbToken = window.sessionStorage.fbtoken;
 
-        Parse.FacebookUtils.logIn(null, {
+        // TODO Create a user with authData field as fbToken
+        var user = new Parse.User();
+        user.set("username", guid());
+        user.set("password", guid());
+        user.set("fbToken", fbToken);
+
+        user.signUp(null, {
           success: function(user) {
-            if (!user.existed()) {
-              console.log("User signed up and logged in through Facebook!");
-            } else {
-              console.log("User logged in through Facebook!");
-            }
+            // Successfully created user
+            console.log(user.id);
+
+            $state.go("tab.orders");
           },
           error: function(user, error) {
-            console.log("User cancelled the Facebook login or did not fully authorize.");
-          }
+            console.log(error);
+            alert("Sign Up Error: " + error.message);
+          },
         });
-
-      }, function() {
-        alert("Failed to retrieve Facebook access token.");
-      }
-    );
-  }
+      });
+    }
 })
 
 .controller('DashCtrl', function($scope) {})
@@ -251,8 +268,29 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope, $state) {
   $scope.settings = {
     enableFriends: true
   };
+
+  $scope.logout = function() {
+    var currentUser = Parse.User.current();
+    if (currentUser) {
+      // do stuff with the user
+      Parse.User.logOut();
+    }
+
+    $state.go('login');
+  };
 });
+
+// UUID Helper
+function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
+}
